@@ -25,11 +25,11 @@ jobs:
         pip install platformio
 
     - name: Build for ESP32-S3
-  run: pio run -e normal_ESP32s3_4M316k
+      run: pio run -e normal_ESP32s3_4M316k  # Poprawiony env z listy
 
     - name: Upload firmware
       uses: actions/upload-artifact@v4
       if: success()
       with:
         name: espeasy-s3-bin
-        path: .pio/build/normal_ESP32s3_4M316k_CDC/*.bin
+        path: .pio/build/normal_ESP32s3_4M316k/*.bin
